@@ -1,0 +1,11 @@
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\bin\Debug\net9.0\CloudMight.Core.deps.json
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\bin\Debug\net9.0\CloudMight.Core.dll
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\bin\Debug\net9.0\CloudMight.Core.pdb
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\CloudMight.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\CloudMight.Core.AssemblyInfoInputs.cache
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\CloudMight.Core.AssemblyInfo.cs
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\CloudMight.Core.csproj.CoreCompileInputs.cache
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\CloudMight.Core.dll
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\refint\CloudMight.Core.dll
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\CloudMight.Core.pdb
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\ref\CloudMight.Core.dll

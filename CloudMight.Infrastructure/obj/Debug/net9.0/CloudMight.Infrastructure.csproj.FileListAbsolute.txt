@@ -1,0 +1,15 @@
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\bin\Debug\net9.0\CloudMight.Infrastructure.deps.json
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\bin\Debug\net9.0\CloudMight.Infrastructure.dll
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\bin\Debug\net9.0\CloudMight.Infrastructure.pdb
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\bin\Debug\net9.0\CloudMight.Core.dll
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\bin\Debug\net9.0\CloudMight.Core.pdb
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\CloudMight.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\CloudMight.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\CloudMight.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\CloudMight.Infrastructure.AssemblyInfo.cs
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\CloudMight.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\CloudMig.01188375.Up2Date
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\CloudMight.Infrastructure.dll
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\refint\CloudMight.Infrastructure.dll
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\CloudMight.Infrastructure.pdb
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\ref\CloudMight.Infrastructure.dll
