@@ -9,3 +9,5 @@ C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\De
 C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\refint\CloudMight.Core.dll
 C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\CloudMight.Core.pdb
 C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\ref\CloudMight.Core.dll
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\CloudMight.Core.csproj.AssemblyReference.cache
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Core\obj\Debug\net9.0\CloudMight.Core.sourcelink.json

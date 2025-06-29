@@ -1,64 +1,12 @@
-﻿Users:
-[ ] Sign Up (Email verification optional)
-[ ] Sign In (JWT/Auth cookie support)
-[ ] Sign Out
-[ ] Edit User Profile
-[ ] Change Password / Reset Password via Email
-[ ] Delete User Account
-[ ] Admin Dashboard:
-    [ ] View all users
-    [ ] Deactivate / Block user
-    [ ] Assign/Remove Admin roles
-[ ] User roles: User, Admin, Moderator (optional)
-[ ] Activity logs per user
-
-Files
-[ ] Upload File (via web or mounted VPN partition)
-[ ] Download File
-[ ] Rename / Delete File
-[ ] Move files between folders
-[ ] File metadata (name, type, size, modified date)
-[ ] Storage quota per user
-[ ] File/folder soft delete (Trash)
-[ ] Restore from Trash / Empty trash
-[ ] Server-side encryption at rest
-
+﻿Users
 Folders
-[ ] Create / Rename / Delete folder
-[ ] Support nested folder hierarchy
-[ ] Path normalization inside mounted drive
-[ ] Breadcrumb / navigation (Web UI)
-
+Files
 Notes
-[ ] Add Note/Comment to File
-[ ] Edit Note
-[ ] Delete Note
-[ ] View all Notes for a File
 
-VPN
-[ ] Set up TUN/TAP server (e.g., using WireGuard or custom solution)
-[ ] Assign static private IP to each user (e.g., 10.1.0.x)
-[ ] Isolate user traffic using VPN subnetting
-[ ] Authenticate VPN connection with user credentials/token
-[ ] Route all storage requests through VPN tunnel
-[ ] Implement file server over TCP/UDP behind VPN (custom or SMB-like)
-[ ] Restrict access to storage only via VPN tunnel
-[ ] Monitor VPN connection status per user
-[ ] Provide OS-specific VPN setup scripts:
-    [ ] Windows (WireGuard config or installer)
-    [ ] macOS / Linux (TUN config or helper script)
-    
-Server
-[ ] Custom TCP protocol to serve file operations (GET, PUT, DELETE, LIST)
-[ ] Map incoming IP/user to their storage partition
-[ ] Implement command routing: e.g., FILE_LIST, FILE_UPLOAD, FILE_DELETE
-[ ] Encrypt transport if VPN is not end-to-end encrypted
-[ ] Validate auth token with each request
-[ ] Log file access per IP/user
+FrontEnd
 
 Search
-[ ] Search files by name
-[ ] Filter by file type, date, size
-[ ] Sort options: name, modified date, size
 
+VPN
+Server
 

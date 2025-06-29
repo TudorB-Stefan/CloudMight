@@ -13,3 +13,6 @@ C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastruct
 C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\refint\CloudMight.Infrastructure.dll
 C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\CloudMight.Infrastructure.pdb
 C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\ref\CloudMight.Infrastructure.dll
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\CloudMight.Infrastructure.sourcelink.json
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\bin\Debug\net9.0\CloudMight.Infrastructure.runtimeconfig.json
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.Infrastructure\obj\Debug\net9.0\CloudMight.Infrastructure.genruntimeconfig.cache
