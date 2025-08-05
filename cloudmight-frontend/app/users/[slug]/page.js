@@ -1,7 +1,7 @@
-export default function UserPage(){
+export default function UserPage({params}){
     return (
         <main>
-            <h1>UserX</h1>
+            <h1>Username: {params.slug}</h1>
         </main>
     );
 }

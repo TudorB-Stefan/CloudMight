@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CloudMight.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+77b53304eb8c4152092d3f15128421d44858fdbb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb92ce1f917e9d2ecd48ef3020da05d882b9d5e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("CloudMight.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CloudMight.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

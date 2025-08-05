@@ -10,7 +10,7 @@ namespace CloudMight.API.Controllers;
 
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/accounts")]
 public class UserController(SignInManager<User> signInManager) : ControllerBase
 {
     [HttpPost("register")]
@@ -24,7 +24,7 @@ public class UserController(SignInManager<User> signInManager) : ControllerBase
             LastName = registerDto.LastName
         };
         var result = await signInManager.UserManager.CreateAsync(user, registerDto.Password);
-        if(result.Succeeded)
+        if(!result.Succeeded)
             return ValidationProblem();
         await signInManager.SignInAsync(user, false);
         return Ok();
@@ -72,6 +72,8 @@ public class UserController(SignInManager<User> signInManager) : ControllerBase
         {
             temp.FirstName,
             temp.LastName,
+            temp.UserName,
+            temp.Email
         }).ToList());
     }
 }
