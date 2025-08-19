@@ -172,3 +172,6 @@ C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.API\bin\Deb
 C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.API\bin\Debug\net9.0\BCrypt.Net-Next.dll
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.SqlServer.dll
+C:\Users\tudor\OneDrive\Desktop\CSharpProjects\CloudMight\CloudMight.API\bin\Debug\net9.0\CloudMight.API.staticwebassets.runtime.json

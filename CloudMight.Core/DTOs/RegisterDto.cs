@@ -10,6 +10,7 @@ public class RegisterDto
     public string? Username { get; set; }
     [Required(ErrorMessage = "Email is required")]
     public string? Email { get; set; }
+    public string? ProfilePictureUrl { get; set; } = "/images/default-avatar.jpg";
     [Required(ErrorMessage = "Password is required")]
     public string? Password { get; set; }
 

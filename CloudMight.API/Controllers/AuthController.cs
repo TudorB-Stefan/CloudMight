@@ -4,6 +4,7 @@ using System.Text;
 using CloudMight.Core.DTOs;
 using CloudMight.Core.Entities;
 using CloudMight.Core.Interfaces.Services;
+using CloudMight.Infrastructure.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -20,14 +21,17 @@ public class AuthController : ControllerBase
     private readonly UserManager<User> _userManager;
     private readonly SignInManager<User> _signInManager;
     private readonly IConfiguration _configuration;
+    // private readonly IAuthService _authService;
     
     public AuthController(
         UserManager<User> userManager,
         SignInManager<User> signInManager,
+        // IAuthService authService,
         IConfiguration configuration)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        // _authService = authService;
         _configuration = configuration;
     }
 
@@ -40,7 +44,8 @@ public class AuthController : ControllerBase
             FirstName = dto.FirstName,
             LastName = dto.LastName,
             Email = dto.Email,
-            UserName = dto.Username
+            UserName = dto.Username,
+            ProfilePictureUrl = dto.ProfilePictureUrl
         };
         var result = await _userManager.CreateAsync(user, dto.Password);
         if(!result.Succeeded)
@@ -57,8 +62,7 @@ public class AuthController : ControllerBase
         var result = await _signInManager.CheckPasswordSignInAsync(user, dto.Password, false);
         if(!result.Succeeded) return Unauthorized();
         var token = GenerateJwtToken(user);
-        await _signInManager.SignInAsync(user, false);
-        return Ok(token);
+        return Ok(new { token });
     }
     [Authorize]
     [HttpGet("user-info")]
@@ -74,6 +78,7 @@ public class AuthController : ControllerBase
             user.LastName,
             user.UserName,
             user.Email,
+            user.ProfilePictureUrl,
             user.Id
         });
     }
@@ -95,7 +100,8 @@ public class AuthController : ControllerBase
             temp.FirstName,
             temp.LastName,
             temp.UserName,
-            temp.Email
+            temp.Email,
+            temp.ProfilePictureUrl
         }).ToList());
     }
     private string GenerateJwtToken(User user)

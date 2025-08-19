@@ -1,4 +1,10 @@
 ﻿Users
+    Edit profile
+    add admins
+    Persistent Login
+    User verification by mail
+Admins
+    Admin page where they see users and can delete uses
 Folders
 Files
 Notes
