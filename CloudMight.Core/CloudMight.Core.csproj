@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Interfaces\Repositories\" />
+    <Folder Include="Interfaces\Services\" />
     <Folder Include="Interfaces\Specifications\" />
     <Folder Include="Specifications\" />
   </ItemGroup>

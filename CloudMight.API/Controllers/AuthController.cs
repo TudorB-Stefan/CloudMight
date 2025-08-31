@@ -3,8 +3,6 @@ using System.Security.Claims;
 using System.Text;
 using CloudMight.Core.DTOs;
 using CloudMight.Core.Entities;
-using CloudMight.Core.Interfaces.Services;
-using CloudMight.Infrastructure.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -21,17 +19,11 @@ public class AuthController : ControllerBase
     private readonly UserManager<User> _userManager;
     private readonly SignInManager<User> _signInManager;
     private readonly IConfiguration _configuration;
-    // private readonly IAuthService _authService;
     
-    public AuthController(
-        UserManager<User> userManager,
-        SignInManager<User> signInManager,
-        // IAuthService authService,
-        IConfiguration configuration)
+    public AuthController(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration)
     {
         _userManager = userManager;
         _signInManager = signInManager;
-        // _authService = authService;
         _configuration = configuration;
     }
 
@@ -64,6 +56,7 @@ public class AuthController : ControllerBase
         var token = GenerateJwtToken(user);
         return Ok(new { token });
     }
+    
     [Authorize]
     [HttpGet("user-info")]
     public async Task<ActionResult> GetUserInfo()
@@ -91,6 +84,53 @@ public class AuthController : ControllerBase
             IsAuthenticated = User.Identity?.IsAuthenticated ?? false
         });
     }
+
+    [Authorize]
+    [HttpPut("edit-profile")]
+    public async Task<IActionResult> EditProfile([FromForm]EditProfileDto dto)
+    {
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if(userId == null) return Unauthorized();
+        var user = await _signInManager.UserManager.FindByIdAsync(userId);
+        if(user == null) return Unauthorized();
+        user.Email = dto.Email ?? user.Email;
+        user.FirstName = dto.FirstName ?? user.FirstName;
+        user.LastName = dto.LastName ?? user.LastName;
+        user.UserName = dto.Username ?? user.UserName;
+        // user.ProfilePictureUrl = dto.ProfilePictureUrl ?? user.ProfilePictureUrl;
+        
+        if (dto.ProfilePicture != null)
+        {
+            var allowedExtensions = new[] { ".jpg", ".jpeg" };
+            var extension = Path.GetExtension(dto.ProfilePicture.FileName).ToLower();
+            if (!allowedExtensions.Contains(extension))
+            {
+                return BadRequest("Invalid file type. Only JPGs are allowed.");
+            }
+            
+            var fileName = $"{Guid.NewGuid()}{extension}";
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", fileName);
+            
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await dto.ProfilePicture.CopyToAsync(stream);
+            }
+            user.ProfilePictureUrl = $"/images/{fileName}";
+        }
+        
+        var result = await _userManager.UpdateAsync(user);
+        if(!result.Succeeded) return BadRequest(result.Errors);
+        
+        var response = new EditProfileResponseDto
+        {
+            Email = user.Email,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            Username = user.UserName,
+            ProfilePictureUrl = user.ProfilePictureUrl
+        };
+        return Ok(response);
+    }
     [HttpGet("all-users")]
     public async Task<ActionResult<IReadOnlyList<User>>> GetAllUsers()
     {
@@ -108,8 +148,6 @@ public class AuthController : ControllerBase
     {
         var claims = new[]
         {
-            // new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-            // new Claim(JwtRegisteredClaimNames.Email, user.Email)
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new Claim(ClaimTypes.Name, user.UserName),
             new Claim(ClaimTypes.Email, user.Email)

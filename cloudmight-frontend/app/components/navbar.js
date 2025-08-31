@@ -48,7 +48,10 @@ export default function Navbar() {
                 {/*</div>*/}
                 <div className="navbar-end gap-5 font-bold">
                     {user ? (
-                            <Link href={"/profile"} className="hover:text-zinc-500"> My Account</Link>
+                            <>
+                                <Link href={"/folders"} className="hover:text-zinc-500"> Storage</Link>
+                                <Link href={"/profile"} className="hover:text-zinc-500"> My Account</Link>
+                            </>
                         ) : (
                             <>
                                 <Link href={"/register"} className="hover:text-zinc-500">Register</Link>

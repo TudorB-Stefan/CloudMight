@@ -10,8 +10,6 @@ export default function Profile(){
     const router = useRouter();
     const {token,setToken} = useAuth();
     useEffect(() => {
-        // const token = localStorage.getItem("token");
-        // console.log("Token from localStorage:", token);
         if (!token) {
             router.push("/login");
             return;
@@ -23,7 +21,6 @@ export default function Profile(){
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                // console.log("Response status:", res.status);
                 if(!res.ok){
                     console.log("User not found");
                     setToken(null);
@@ -31,7 +28,6 @@ export default function Profile(){
                     return;
                 }
                 const data = await res.json();
-                // console.log("Fetched user data:", data);
                 setUser(data);
             } catch (error) {
                 console.log("Error fetching user:", err);
@@ -42,7 +38,6 @@ export default function Profile(){
         fetchUsers();
     },[router,token,setToken]);
     function handleLogout() {
-        // localStorage.removeItem("token");
         setToken(null);
         router.push("/login");
     }
