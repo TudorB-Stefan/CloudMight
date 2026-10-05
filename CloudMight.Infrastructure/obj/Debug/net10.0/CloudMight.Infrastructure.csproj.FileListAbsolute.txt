@@ -1,0 +1,15 @@
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\bin\Debug\net10.0\CloudMight.Infrastructure.deps.json
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\bin\Debug\net10.0\CloudMight.Infrastructure.dll
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\bin\Debug\net10.0\CloudMight.Infrastructure.pdb
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\bin\Debug\net10.0\CloudMight.Core.dll
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\bin\Debug\net10.0\CloudMight.Core.pdb
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\obj\Debug\net10.0\CloudMight.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\obj\Debug\net10.0\CloudMight.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\obj\Debug\net10.0\CloudMight.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\obj\Debug\net10.0\CloudMight.Infrastructure.AssemblyInfo.cs
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\obj\Debug\net10.0\CloudMight.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\obj\Debug\net10.0\CloudMig.01188375.Up2Date
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\obj\Debug\net10.0\CloudMight.Infrastructure.dll
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\obj\Debug\net10.0\refint\CloudMight.Infrastructure.dll
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\obj\Debug\net10.0\CloudMight.Infrastructure.pdb
+C:\Users\Tudor\Desktop\CloudMight\CloudMight.Infrastructure\obj\Debug\net10.0\ref\CloudMight.Infrastructure.dll

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CloudMight.Api/CloudMight.Api.csproj" />
+  <Project Path="CloudMight.Core/CloudMight.Core.csproj" />
+  <Project Path="CloudMight.Infrastructure/CloudMight.Infrastructure.csproj" />
+</Solution>
