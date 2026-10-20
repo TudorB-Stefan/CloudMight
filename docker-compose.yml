@@ -1,28 +1,41 @@
 services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=BriefingTimeDb;Username=postgres;Password=Passwd@123
+    depends_on:
+      db:
+        condition: service_healthy
+
   db:
-    image: postgres:16-alpine
-    container_name: cloudmight-postgres
+    image: postgres:16
     restart: always
     environment:
+      POSTGRES_DB: BriefingTimeDb
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: Passwd@123 
-      POSTGRES_DB: CloudMightDb
+      POSTGRES_PASSWORD: Passwd@123
     ports:
       - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
-
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: cloudmight-pgadmin
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@cloudmight.local
-      PGADMIN_DEFAULT_PASSWORD: admin
-    ports:
-      - "5050:80"
-    depends_on:
-      - db
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
 volumes:
-  pgdata:
+  postgres_data:
