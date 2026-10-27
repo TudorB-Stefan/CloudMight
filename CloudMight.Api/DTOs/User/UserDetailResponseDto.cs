@@ -1,6 +1,6 @@
 namespace CloudMight.Api.DTOs.User;
 
-public class UserDetailResponse
+public class UserDetailResponseDto
 {
     
 }
