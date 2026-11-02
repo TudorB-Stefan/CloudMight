@@ -134,6 +134,10 @@ namespace CloudMight.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("text");

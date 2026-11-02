@@ -9,7 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IHostEnviromentConfigRepository, HostEnviromentConfigRepository>();
+
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ITokenService,TokentService>();
 
 builder.Services.AddSingleton<IPasswordService, PasswordService>();
 

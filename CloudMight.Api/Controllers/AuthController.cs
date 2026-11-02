@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace CloudMight.Api.Controllers;
 
 public class AuthController(IUserService userService, 
-    IPasswordService passwordService) : BaseController
+    IPasswordService passwordService,
+    ITokenService tokenService) : BaseController
 {
     [HttpPost("register")]
     public async Task<ActionResult> Register([FromBody]RegisterRequestDto request, CancellationToken cancellationToken)
@@ -54,12 +55,14 @@ public class AuthController(IUserService userService,
     [HttpPost("login")]
     public async Task<ActionResult<LoginResponseDto>> Login([FromBody] LoginRequestDto request,CancellationToken cancellationToken)
     {
-        var user = await userService.FindByEmailAsync(request.Email,new CancellationToken());
-        if (!user.IsSuccess)
+        var userResult = await userService.FindByEmailAsync(request.Email,new CancellationToken());
+        if (!userResult.IsSuccess)
         {
-            return BadRequest("Invalid email or password.");
+            return Unauthorized("Invalid email or password.");
         }
 
+        var user = userResult.Data;
+        
         var passwordMatch = await userService.CheckPassword(
             request.Email,
             request.Password,
@@ -67,9 +70,60 @@ public class AuthController(IUserService userService,
         );
         if (!passwordMatch.IsSuccess)
         {
-            return BadRequest("Invalid email or password.");
+            return Unauthorized("Invalid email or password.");
         }
 
-        return Ok();
+        var token = await tokenService.CreateTokenAsync(user);
+        var refreshToken = tokenService.CreateRefreshTokenAsync();
+
+        user.RefreshToken = refreshToken;
+        user.RefreshToken.ExpiresAt = DateTime.UtcNow.AddDays(2);
+        await userService.UpdateAsync(user,cancellationToken);
+        
+        var cookieOptions = new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = true,
+            SameSite = SameSiteMode.Strict,
+            Expires = DateTime.UtcNow.AddDays(2)
+        };
+        Response.Cookies.Append("auth_token",token,cookieOptions);
+        
+        return Ok(user.ToSelfResponse());
+    }
+
+    [HttpPost("refresh-token")]
+    public async Task<ActionResult<LoginResponseDto>> RefreshToken([FromBody] RefreshTokenDto refreshTokenDto,CancellationToken cancellationToken)
+    {
+        var userResponse = await userService.FindByRefreshToken(refreshTokenDto.Token,cancellationToken);
+        if (!userResponse.IsSuccess)
+        {
+            return Unauthorized();
+        }
+
+        var user = userResponse.Data;
+
+        if (user.RefreshToken == null || user.RefreshToken.IsExpired)
+        {
+            user.RefreshToken = null;
+            await userService.UpdateAsync(user, cancellationToken);
+        }
+        
+        var newRefreshToken = tokenService.CreateRefreshTokenAsync();
+        user.RefreshToken = newRefreshToken;
+        user.RefreshToken.ExpiresAt = DateTime.UtcNow.AddDays(2);
+
+        await userService.UpdateAsync(user, cancellationToken);
+        var newToken = await tokenService.CreateTokenAsync(user);
+        
+        Response.Cookies.Append("auth_token",newToken,new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = false,
+            SameSite = SameSiteMode.Strict,
+            Expires = DateTime.UtcNow.AddDays(2)
+        });
+        
+        return Ok(user.ToSelfResponse());
     }
 }

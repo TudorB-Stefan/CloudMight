@@ -14,7 +14,7 @@ public class PasswordService : IPasswordService
     private const int SaltSize = 16;
     private const int HashSize = 32;
     
-    public string HashPassword(string password)
+    public string HashPassword(string password, CancellationToken ct)
     {
         var salt = new byte[SaltSize];
         RandomNumberGenerator.Fill(salt);
@@ -32,7 +32,7 @@ public class PasswordService : IPasswordService
         return $"{Convert.ToBase64String(salt)}:{Convert.ToBase64String(hash)}";
     }
     
-    public bool VerifyPassword(string password, string storedHash)
+    public bool VerifyPassword(string password, string storedHash, CancellationToken ct)
     {
         var parts = storedHash.Split(':');
         if (parts.Length != 2) return false;

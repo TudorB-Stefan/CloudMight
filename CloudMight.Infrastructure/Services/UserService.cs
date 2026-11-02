@@ -111,6 +111,12 @@ public class UserService(IUserRepository userRepository,
         return Result.Success();
     }
 
+    public async Task<Result> UpdateAsync(User user, CancellationToken ct)
+    {
+        await userRepository.UpdateAsync(user, ct);
+        return Result.Success();
+    }
+
     public async Task<Result> CheckPassword(string email, string password,CancellationToken ct)
     {
         var user = await FindByEmailAsync(email,ct);

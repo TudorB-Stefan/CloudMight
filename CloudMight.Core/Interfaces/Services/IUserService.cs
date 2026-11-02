@@ -13,5 +13,6 @@ public interface IUserService
     Task<Result> CreateLocalFolder(string username,CancellationToken ct);
     Task<Result<HostEnviromentConfig>> CreateUserConfig(string username, string plainTextPassword,CancellationToken ct);
     Task<Result> CreateUserAsync(User user,CancellationToken ct);
+    Task<Result> UpdateAsync(User user, CancellationToken ct);
     Task<Result> CheckPassword(string email, string password,CancellationToken ct);
 }
